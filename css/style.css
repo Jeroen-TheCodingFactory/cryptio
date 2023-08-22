@@ -5,8 +5,13 @@
 }
 
 :root{
+    --main-font:'Open Sans', sans-serif;
+    --encrypt-background: #14C38E;
+    --font-color: #eee;
+    --decrypt-background: #900C3F;
+    --key-background: #332FD0;
+    --background: #D7BBF5;
 }
-
 
 html{
     font-size: 62.5%;
@@ -14,4 +19,95 @@ html{
 
 body{
     font-size: 2rem;
+    min-height:100vh;
+    font-family: var(--main-font);
+    padding: 4rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:4rem;
+    background: var(--background);
+}
+
+.encrypt{
+    width:40rem;
+    aspect-ratio: 1/0.4;
+    background: var(--encrypt-background);
+    /* transform: skew(-8deg); */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    animation-name: fromLeft;
+    animation-duration: 0.8s;
+    will-change: transform;
+}
+
+.encrypt--decrypt{
+    background: var(--decrypt-background);
+}
+
+.encrypt--key{
+    background: var(--key-background); 
+    animation-name: fromRight;
+}
+
+.encrypt--key .encrypt__body > div{
+    border-bottom: 0.3rem solid var(--font-color);
+    width:100%;
+}
+.encrypt--key .encrypt__input{
+    border:none;
+    width:50%;
+}
+.encrypt__header{
+    height:40%;
+    padding-top: 2rem;
+    padding-left:4rem;
+}
+
+.encrypt__heading{
+    font-weight: 600;
+    font-size: 200%;
+    text-transform: uppercase;
+    color: var(--font-color);
+}
+.encrypt__body{
+    height:60%;
+    display:flex;
+    align-items: flex-end;
+    padding-bottom:2rem;
+}
+
+.encrypt__input{
+    width:100%;
+    height: auto;
+    background:none;
+    outline:none;
+    border:none;
+    padding-left: 4rem;
+    padding-bottom:1rem;
+    font-size: 80%;
+    color: var(--font-color);
+    border-bottom: 0.3rem solid var(--font-color);
+}
+
+@keyframes fromLeft {
+    from{
+        transform: translateX(-2rem);
+        opacity:0;
+    }
+    to{
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+@keyframes fromRight {
+    from{
+        transform: translateX(2rem);
+        opacity:0;
+    }
+    to{
+        transform: translateX(0);
+        opacity:1;
+    }
 }

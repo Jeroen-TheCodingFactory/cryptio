@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToClean</title>
+    <title>Cryptio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer></script>
 </head>
+
 <body>
+    <article class="encrypt">
+        <header class="encrypt__header">
+            <h1 class="encrypt__heading"><em>Encrypt</em></h1>
+        </header>
+        <div class="encrypt__body">
+            <input id="js--encrypt" type="text" placeholder="Secret Message..." class="encrypt__input">
+        </div>
+    </article>
+    <article class="encrypt encrypt--key">
+        <header class="encrypt__header">
+            <h1 class="encrypt__heading"><em>Key</em></h1>
+        </header>
+        <div class="encrypt__body">
+            <div>
+                <input id="js--key" value="1" type="number" min="0" max="26" class="encrypt__input">
+            </div>
+        </div>
+    </article>
+    <article class="encrypt encrypt--decrypt">
+        <header class="encrypt__header">
+            <h1 class="encrypt__heading"><em>Decrypt</em></h1>
+        </header>
+        <div class="encrypt__body">
+            <input id="js--decrypt" type="text" placeholder="Secret Message..." class="encrypt__input">
+        </div>
+    </article>
 </body>
+
 </html>
