@@ -10,7 +10,7 @@
     --font-color: #eee;
     --decrypt-background: #900C3F;
     --key-background: #332FD0;
-    --background: #D7BBF5;
+    --background: #eee;
 }
 
 html{
@@ -31,7 +31,7 @@ body{
 }
 
 .encrypt{
-    width:40rem;
+    width:45rem;
     aspect-ratio: 1/0.4;
     background: var(--encrypt-background);
     /* transform: skew(-8deg); */
@@ -109,5 +109,17 @@ body{
     to{
         transform: translateX(0);
         opacity:1;
+    }
+}
+
+@media screen and (max-width: 62.5rem) {
+    body{
+        padding:4rem;
+    }
+
+    .encrypt{
+        aspect-ratio: 1/0.5;
+        width:100%;
+        clip-path:none;
     }
 }
